@@ -111,11 +111,7 @@ ifeq ($(strip $(OPTR_SPEC_SEG_DEF)),NONE)
     PRODUCT_PACKAGES += DangerDash
 endif
 
-PRODUCT_SHIPPING_API_LEVEL_OVERRIDE := 28
-
 $(call inherit-product, device/mediatek/mt6735/device.mk)
-
-PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 $(call inherit-product-if-exists, vendor/mediatek/libs/$(MTK_TARGET_PROJECT)/device-vendor.mk)
 
