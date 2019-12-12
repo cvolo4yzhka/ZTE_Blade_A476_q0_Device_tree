@@ -74,6 +74,10 @@ SIM_COUNT := 2
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/zte_blade_a476/factory/res/sound/testpattern1.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/testpattern1.wav:mtk
 PRODUCT_COPY_FILES += vendor/mediatek/proprietary/custom/zte_blade_a476/factory/res/sound/ringtone.wav:$(TARGET_COPY_OUT_VENDOR)/res/sound/ringtone.wav:mtk
 
+# Keyboard layout
+PRODUCT_COPY_FILES += device/mediatek/mt6735/ACCDET.kl:system/usr/keylayout/ACCDET.kl:mtk
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl:mtk
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/mtk-tpd-kpd.kl:system/usr/keylayout/mtk-tpd-kpd.kl:mtk
 
 # Microphone
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/android.hardware.microphone.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.microphone.xml
@@ -118,9 +122,10 @@ $(call inherit-product-if-exists, vendor/mediatek/libs/$(MTK_TARGET_PROJECT)/dev
 #A-Go
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# copy bootanimation by cvolo4yzhka
+# copy bootanimation
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/system,system)
+
 # gapps
 $(call inherit-product, vendor/gapps/config.mk)
 # end gapps
