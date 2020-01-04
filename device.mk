@@ -126,6 +126,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_COPY_FILES += \
 	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/system,system)
 
-# gapps
-$(call inherit-product, vendor/gapps/config.mk)
-# end gapps
+# opengapps
+#$(call inherit-product, vendor/gapps/config.mk)
+# end opengapps
+
+PRODUCT_PROPERTY_OVERRIDES += qemu.hw.mainkeys=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += qemu.hw.mainkeys=1
