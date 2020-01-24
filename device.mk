@@ -129,6 +129,3 @@ PRODUCT_COPY_FILES += \
 # opengapps
 $(call inherit-product, vendor/gapps/config.mk)
 # end opengapps
-
-PRODUCT_PROPERTY_OVERRIDES += qemu.hw.mainkeys=1
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += qemu.hw.mainkeys=1
