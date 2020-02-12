@@ -34,5 +34,10 @@ ifneq ($(strip $(MTK_AB_OTA_UPDATER)), yes)
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 endif
 BOARD_FLASH_BLOCK_SIZE := 4096
+# adjust the super size
+BOARD_MTK_SUPER_SIZE_KB := 2184640
+ifeq (yes,$(strip $(MTK_GMO_RAM_OPTIMIZE)))
+    BOARD_MTK_GMO_SUPER_SIZE_KB := 2184640
+endif
 
 -include device/mediatek/build/core/soong_config.mk
